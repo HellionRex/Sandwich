@@ -47,7 +47,7 @@ sandwiches = ["images/\/sandwich1-removebg-preview.png", "images/\/sandwich2-rem
 
 function move() {
 	if((x+320)>window.innerWidth || x<0){		
-		dx=Math.random()*-5;
+		dx=Math.random()*-3;
 	}
 
 	if((x+dx)>window.innerWidth){
@@ -60,7 +60,7 @@ function move() {
 
 	if((y+200)>window.innerHeight || y<0){
 
-		dy=Math.random()*-5;
+		dy=Math.random()*-3;
 	}
 
 	if((y+dy)>window.innerHeight){
@@ -94,8 +94,8 @@ function update() {
 
 }
 
-setInterval(() => update(), 120);
-setInterval(() => move(), 20);
+setInterval(() => update(), 150);
+setInterval(() => move(), 25);
 
 </script>
 
