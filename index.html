@@ -46,24 +46,35 @@ sandwiches = ["images/\/sandwich1-removebg-preview.png", "images/\/sandwich2-rem
 
 
 function move() {
-	if((x+320)>window.innerWidth || x<0){
-		dx*=-1;
+	if((x+320)>window.innerWidth || x<0){		
+		dx=Math.random()*-5;
 	}
 
 	if((x+dx)>window.innerWidth){
-		x=(window.innerWidth-180)
+		x=(window.innerWidth+320)
+	}
+	else if((x+dx)<0){
+		x=0;
+		dx=Math.abs(dx);
 	}
 
 	if((y+200)>window.innerHeight || y<0){
-		dy*=-1;
+
+		dy=Math.random()*-5;
 	}
 
 	if((y+dy)>window.innerHeight){
 		y=(window.innerHeight-200)
 	}
+	else if((y+dy)<0){
+		y=0;
+		dy=Math.abs(dy);
+	}
 
 	x+=dx;
 	y+=dy;
+
+	console.log(x, y);
 
 	im.style.left = (x.toString() + "px");
 	im.style.top = (y.toString() + "px");
@@ -83,7 +94,7 @@ function update() {
 
 }
 
-setInterval(() => update(), 75);
+setInterval(() => update(), 100);
 setInterval(() => move(), 10);
 
 </script>
